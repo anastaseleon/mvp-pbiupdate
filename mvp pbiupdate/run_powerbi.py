@@ -62,7 +62,7 @@ if __name__ == "__main__":
     btn_upload = tk.Button(root, text="Upload Data", command=open_file)
     btn_upload.pack()
 
-    btn_db_path = tk.Button(root, text="Show Database Path", command=show_db_path) # button to show db path
+    btn_db_path = tk.Button(root, text="Show Database Path", command=show_db_path) 
     btn_db_path.pack()
 
     root.mainloop()
