@@ -24,25 +24,25 @@ def open_categorization_window(file_path):
 
     for col in df_columns:
         frame = tk.Frame(window2)
-        frame.pack()
-        label = tk.Label(frame, text=col)
+        frame.pack(pady=5)  # Add padding between frames
+        label = tk.Label(frame, text=col, width=20, anchor="w") # Wider label, left aligned
         label.pack(side=tk.LEFT)
-        combo = ttk.Combobox(frame, values=backend.CATEGORIES)
+        combo = ttk.Combobox(frame, values=backend.CATEGORIES, width=25) # Wider combobox
         combo.pack(side=tk.RIGHT)
         combo.current(0)  # Set the default value to the first item in the list
         column_frames[col] = frame
 
     target_frame = tk.Frame(window2)
-    target_frame.pack()
-    target_label = tk.Label(target_frame, text="Target Column:")
+    target_frame.pack(pady=5) # Add padding
+    target_label = tk.Label(target_frame, text="Target Column:", width=20, anchor="w")
     target_label.pack(side=tk.LEFT)
-    target_combo = ttk.Combobox(target_frame, values=df_columns)
+    target_combo = ttk.Combobox(target_frame, values=df_columns, width=25)
     target_combo.pack(side=tk.RIGHT)
     if df_columns:
         target_combo.current(0)  # Set the default value to the first item in the list
 
     btn_save = tk.Button(window2, text="Save and Process", command=lambda: save_mapping(file_path, column_frames, target_combo))
-    btn_save.pack()
+    btn_save.pack(pady=10) # Add padding
 
 def save_mapping(file_path, column_frames, target_combo):
     mappings = {}
@@ -72,8 +72,20 @@ def show_db_path():
 if __name__ == "__main__":
     root = tk.Tk()
     root.title("Ishikawa Analyzer")
+
+    # Make the window bigger by default
+    root.geometry("600x400")  # Set initial width and height
+
+    # Title label
+    title_label = tk.Label(root, text="Ishikawa Diagram Generator", font=("Arial", 16))
+    title_label.pack(pady=(20, 10))  # Add padding top and bottom
+
+    # Instructions label
+    instructions_label = tk.Label(root, text="Upload your CSV data to map columns to Ishikawa categories.")
+    instructions_label.pack(pady=(0, 20))  # Add padding bottom
+
     btn_upload = tk.Button(root, text="Upload Data", command=open_file)
-    btn_upload.pack()
+    btn_upload.pack(pady=(0, 10))  # Add padding
 
     btn_db_path = tk.Button(root, text="Show Database Path", command=show_db_path)
     btn_db_path.pack()
