@@ -5,7 +5,7 @@ import subprocess
 # Constants
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))  # Get script directory
 SUMMARY_CSV = os.path.join(SCRIPT_DIR, "ishikawa_summary.csv")  # Summary CSV path
-CATEGORIES = ["Materials", "Methods", "Machines", "Manpower", "Environment", "Measurement", "Target"]  # Include "Target"
+CATEGORIES = ["Materials", "Methods", "Machines", "Manpower", "Environment", "Measurement","Ignore", "Target"]  # Include "Target"
 
 def get_csv_columns(file_path):
     """Extracts column names from a CSV file."""

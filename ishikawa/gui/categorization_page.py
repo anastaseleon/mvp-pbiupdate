@@ -1,7 +1,8 @@
 import tkinter as tk
 from tkinter import filedialog, messagebox, ttk
 import backend
-from. import summary_page  # Import from the same directory
+from. import summary_page
+from. import home_page  # Import home_page
 
 def show_categorization_page(main_frame, file_path=None):
     """Displays the categorization page."""
@@ -44,8 +45,8 @@ def show_categorization_page(main_frame, file_path=None):
     button_frame = ttk.Frame(main_frame)
     button_frame.pack(pady=10, fill='x', expand=False)
 
-    # Back button (disabled on this page)
-    back_button = ttk.Button(button_frame, text="Back", state=tk.DISABLED)
+    # Back button (goes back to home page)
+    back_button = ttk.Button(button_frame, text="Back", command=lambda: home_page.show_home_page(main_frame))  # Call home_page.show_home_page
     back_button.pack(side=tk.LEFT, padx=5)
 
     # Next button

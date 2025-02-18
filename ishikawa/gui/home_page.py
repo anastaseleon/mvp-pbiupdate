@@ -1,10 +1,23 @@
+import tkinter as tk
 from tkinter import ttk
-from. import categorization_page  # Import from the same directory
+from. import categorization_page
 
 def show_home_page(main_frame):
     """Displays the initial home page."""
     for widget in main_frame.winfo_children():
         widget.destroy()
-    ttk.Label(main_frame, text="Ishikawa Diagram Generator", font=("Arial", 16)).pack(pady=(0, 10))
-    ttk.Label(main_frame, text="Upload your CSV data to map columns to Ishikawa categories.").pack(pady=(0, 20))
-    ttk.Button(main_frame, text="Upload Data", command=lambda: categorization_page.show_categorization_page(main_frame)).pack()
+
+    # Create a frame for the home page content
+    home_frame = ttk.Frame(main_frame)
+    home_frame.pack(expand=True)
+
+    # Title label
+    ttk.Label(home_frame, text="Ishikawa Diagram Generator", font=("Arial", 24)).pack(pady=20)
+
+    # Description label
+    description_label = ttk.Label(home_frame, text="This tool helps you create Ishikawa diagrams for root cause analysis.", wraplength=500)
+    description_label.pack(pady=10)
+
+    # Button to start the process
+    start_button = ttk.Button(home_frame, text="Start Analysis", command=lambda: categorization_page.show_categorization_page(main_frame))
+    start_button.pack(pady=20)
