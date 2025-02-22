@@ -7,13 +7,15 @@ from. import categorization_page  # Import categorization_page
 # Constants
 POWER_BI_TEMPLATE = "template.pbit"
 
-def save_and_show_summary(main_frame, file_path, column_mappings, target_combo):
+def save_and_show_summary(main_frame, file_path, column_mappings, target_combo, measures):  # Add measures argument
     """Processes the data and displays the summary page."""
     mappings = {col: combo.get() for col, combo in column_mappings.items()}
     target_column = target_combo.get()
+    selected_measures = {col: combo.get() for col, combo in measures.items()}  # Get selected measures
 
     try:
-        message = backend.process_data(file_path, mappings, target_column)
+        message = backend.process_data(file_path, mappings, target_column, selected_measures)  # Pass measures to backend
+
 
         # Clear the main frame
         for widget in main_frame.winfo_children():
