@@ -1,0 +1,12 @@
+Column,Ishikawa,Value,Measure,Correlation to target
+Date,Materials,20.0,count,
+variable random,Materials,1000.0,count,0.3499427620591829
+autre,Materials,1000.0,count,-0.15760198263037659
+X3,Materials,1000.0,count,0.16136879507028806
+Appro,Materials,1000.0,count,0.5077668309762113
+X5,Materials,1000.0,count,-0.2343809164207521
+X6,Materials,1000.0,count,0.3803228687761158
+X7,Materials,1000.0,count,-0.06984829127293055
+Bug,Materials,1000.0,count,0.4371780849009108
+Absent,Materials,1000.0,count,0.06560985869711396
+faillure,Target,1.586076010808,mean,1.0
