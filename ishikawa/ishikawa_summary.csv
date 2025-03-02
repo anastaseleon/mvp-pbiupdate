@@ -1,4 +1,5 @@
 Column,Ishikawa,Value,Measure,Correlation to target
+<<<<<<< Updated upstream
 Date,Materials,20.0,count,
 variable random,Materials,1000.0,count,0.3499427620591829
 autre,Materials,1000.0,count,-0.15760198263037659
@@ -10,3 +11,13 @@ X7,Materials,1000.0,count,-0.06984829127293055
 Bug,Materials,1000.0,count,0.4371780849009108
 Absent,Materials,1000.0,count,0.06560985869711396
 faillure,Target,1.586076010808,mean,1.0
+=======
+Date,Materials,1000.0,count,
+Shift,Materials,1000.0,count,
+Operator,Materials,1000.0,count,
+Machine,Materials,1000.0,count,
+RawMaterialBatch,Materials,1000.0,count,
+Temperature,Materials,1000.0,count,0.02083218449637674
+Humidity,Materials,1000.0,count,-0.012660561883358002
+DefectCount,Target,2.481,mean,1.0
+>>>>>>> Stashed changes

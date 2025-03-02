@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import filedialog, messagebox, ttk
 import backend
 from. import categorization_page
+import styles  # Import the styles module
 
 def show_upload_page(main_frame):
     """Displays the upload page."""
@@ -9,7 +10,7 @@ def show_upload_page(main_frame):
         widget.destroy()
 
     # Upload page content
-    ttk.Label(main_frame, text="Upload your CSV data file.").pack(pady=10)
+    ttk.Label(main_frame, text="Upload your CSV data file.", style="Black.TLabel").pack(pady=10)
 
     def upload_file():
         file_path = filedialog.askopenfilename(filetypes=[("CSV Files", "*.csv")])
@@ -20,4 +21,4 @@ def show_upload_page(main_frame):
             except Exception as e:
                 messagebox.showerror("Error", str(e))
 
-    ttk.Button(main_frame, text="Upload Data", command=upload_file).pack()
+    ttk.Button(main_frame, text="Upload Data", command=upload_file, style="Black.TButton").pack()
