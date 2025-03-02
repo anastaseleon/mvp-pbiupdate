@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 from PIL import Image, ImageTk
-from. import home_page
+from . import home_page
 
 def show_guide_page(main_frame):
     """Displays the Ishikawa guide pages."""
@@ -11,17 +11,15 @@ def show_guide_page(main_frame):
     # Create the guide pages (example with 5 pages)
     guide_pages = [
         {
+            "title": "Ishikawa (Fishbone) Diagram Guide - Page 1",
             "text": """
-            ## Ishikawa (Fishbone) Diagram Guide - Page 1
-
             The Ishikawa diagram, also known as the fishbone diagram or cause-and-effect diagram, is a visual tool used to identify and organize the potential causes of a problem.
             """,
             "image": "imagepage1.png"
         },
         {
+            "title": "Ishikawa (Fishbone) Diagram Guide - Page 2",
             "text": """
-            ## Ishikawa (Fishbone) Diagram Guide - Page 2
-
             ### Steps:
 
             1. **Identify the problem:** Clearly define the problem you want to analyze.
@@ -30,26 +28,23 @@ def show_guide_page(main_frame):
             "image": "imagepage2.png"
         },
         {
+            "title": "Ishikawa (Fishbone) Diagram Guide - Page 3",
             "text": """
-            ## Ishikawa (Fishbone) Diagram Guide - Page 3
-
             3. **Brainstorm potential causes:** For each category, brainstorm possible causes that could contribute to the problem.
             4. **Analyze and prioritize:** Discuss and analyze the causes to identify the most likely root causes.
             """,
             "image": "imagepage3.png"
         },
         {
+            "title": "Ishikawa (Fishbone) Diagram Guide - Page 4",
             "text": """
-            ## Ishikawa (Fishbone) Diagram Guide - Page 4
-
             5. **Take action:** Develop action plans to address the root causes.
             """,
             "image": "imagepage4.png"
         },
         {
+            "title": "Ishikawa (Fishbone) Diagram Guide - Page 5",
             "text": """
-            ## Ishikawa (Fishbone) Diagram Guide - Page 5
-
             ### Example:
 
             **Problem:** High defect rate in manufacturing.
@@ -81,6 +76,10 @@ def show_guide_page(main_frame):
             widget.destroy()
 
         page_data = guide_pages[page_num]
+
+        # Title Label (formatted differently)
+        title_label = ttk.Label(main_frame, text=page_data["title"], justify="center", style="Black.TLabel", font=("Arial", 18, "bold"))
+        title_label.pack(pady=10)
 
         # Text Label
         text_label = ttk.Label(main_frame, text=page_data["text"], justify="left", style="Black.TLabel")
