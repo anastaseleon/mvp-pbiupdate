@@ -11,59 +11,84 @@ def show_guide_page(main_frame):
     # Create the guide pages (example with 5 pages)
     guide_pages = [
         {
-            "title": "Ishikawa (Fishbone) Diagram Guide - Page 1",
+            "title": "Ishikawa (Fishbone) Diagram - Introduction",
             "text": """
             The Ishikawa diagram, also known as the fishbone diagram or cause-and-effect diagram, is a visual tool used to identify and organize the potential causes of a problem.
-            """,
-            "image": "imagepage1.png"
+
+            Key benefits:
+
+            - Provides a visual representation of the problem and its potential causes.
+            - Helps to identify root causes rather than just symptoms.
+            - Facilitates brainstorming and encourages team participation.
+            - Can be used in various settings, from manufacturing to service industries.
+            """
         },
         {
-            "title": "Ishikawa (Fishbone) Diagram Guide - Page 2",
+            "title": "Ishikawa Diagram and the DMAIC Framework",
             "text": """
-            ### Steps:
+            The DMAIC framework (Define, Measure, Analyze, Improve, Control) is a structured problem-solving approach often used in Six Sigma projects.
+           It can be effectively integrated with the Ishikawa diagram to provide a comprehensive approach to problem-solving.
 
-            1. **Identify the problem:** Clearly define the problem you want to analyze.
-            2. **Identify the major categories:** Determine the main categories of causes (e.g., Materials, Methods, Machines, Manpower, Environment, Measurement).
+            How DMAIC complements the Ishikawa diagram:
+
+            - Define: Clearly define the problem and project scope.
+            - Measure: Collect data and establish metrics to track progress.
+            - Analyze: Use the Ishikawa diagram to brainstorm and analyze potential causes.
+            - Improve: Develop and implement solutions to address root causes.
+            - Control: Monitor results, sustain improvements, and standardize processes.
             """,
             "image": "imagepage2.png"
         },
         {
-            "title": "Ishikawa (Fishbone) Diagram Guide - Page 3",
+            "title": "Ishikawa (Fishbone) Diagram - Define Phase",
             "text": """
-            3. **Brainstorm potential causes:** For each category, brainstorm possible causes that could contribute to the problem.
-            4. **Analyze and prioritize:** Discuss and analyze the causes to identify the most likely root causes.
-            """,
-            "image": "imagepage3.png"
+            In the Define phase, you clearly articulate the problem you're trying to solve. This involves:
+
+            - Problem Statement: Create a concise and specific problem statement.
+            - Project Scope: Define the boundaries of your analysis.
+            - Goals: Establish clear and measurable goals for the project.
+            - Team: Identify the team members who will be involved in the analysis and improvement efforts.
+            """
         },
         {
-            "title": "Ishikawa (Fishbone) Diagram Guide - Page 4",
+            "title": "Ishikawa (Fishbone) Diagram - Measure Phase",
             "text": """
-            5. **Take action:** Develop action plans to address the root causes.
-            """,
-            "image": "imagepage4.png"
+            The Measure phase focuses on gathering data related to the problem. This includes:
+
+            - Data Collection: Collect both quantitative and qualitative data.
+            - Metrics: Develop key performance indicators (KPIs) to track progress.
+            - Measurement System Analysis: Ensure the accuracy and reliability of your measurement system.
+            """
         },
         {
-            "title": "Ishikawa (Fishbone) Diagram Guide - Page 5",
+            "title": "Ishikawa (Fishbone) Diagram - Analyze Phase",
             "text": """
-            ### Example:
+            In the Analyze phase, you use the Ishikawa diagram to brainstorm and analyze potential causes:
 
-            **Problem:** High defect rate in manufacturing.
+            - Brainstorming: Generate a comprehensive list of potential causes.
+            - Categorization: Group the causes into the 6M categories (or other relevant categories).
+            - Prioritization: Identify the most likely root causes using data analysis and statistical tools.
+            """
+        },
+        {
+            "title": "Ishikawa (Fishbone) Diagram - Improve Phase",
+            "text": """
+            The Improve phase involves developing and implementing solutions to address the root causes:
 
-            **Categories:**
-            * Materials
-            * Methods
-            * Machines
-            * Manpower
-            * Environment
+            - Solution Generation: Brainstorm potential solutions.
+            - Evaluation: Evaluate the potential solutions based on feasibility and effectiveness.
+            - Implementation: Implement the chosen solutions, starting with pilot tests if possible.
+            """
+        },
+        {
+            "title": "Ishikawa (Fishbone) Diagram - Control Phase",
+            "text": """
+            The Control phase focuses on sustaining the improvements and preventing the problem from recurring:
 
-            **Potential Causes:**
-            * **Materials:** Poor quality raw materials, inconsistent supplier quality.
-            * **Methods:** Inadequate training, outdated procedures.
-            * **Machines:** Equipment malfunction, lack of maintenance.
-            * **Manpower:** Operator error, lack of experience.
-            * **Environment:** Temperature fluctuations, poor lighting.
-            """,
-            "image": "imagepage5.png"
+            - Monitoring: Track the effectiveness of the solutions using KPIs.
+            - Standardization: Update procedures and documentation to reflect the improved processes.
+            - Control Mechanisms: Implement controls to ensure the improvements are maintained.
+            """
         }
     ]
 
@@ -82,7 +107,7 @@ def show_guide_page(main_frame):
         title_label.pack(pady=10)
 
         # Text Label
-        text_label = ttk.Label(main_frame, text=page_data["text"], justify="left", style="Black.TLabel")
+        text_label = ttk.Label(main_frame, text=page_data["text"], justify="left", style="Black.TLabel",font=("Arial", 15))
         text_label.pack(pady=10, fill=tk.X)
 
         # Image Label (if an image is specified)
