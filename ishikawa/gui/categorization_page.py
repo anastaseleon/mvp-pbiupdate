@@ -21,20 +21,20 @@ def show_categorization_page(main_frame, file_path=None):
     for widget in main_frame.winfo_children():
         widget.destroy()
 
-    ttk.Label(main_frame, text="Map columns to Ishikawa categories and select measures:", style="Black.TLabel").pack(pady=10)
+    ttk.Label(main_frame, text="Map columns to Ishikawa categories and select measures:", style="Black.TLabel",font=("Times New Romman", 30)).pack(pady=10)
 
     column_mappings = {}
     measures = {}
     for col in df_columns:
         frame = ttk.Frame(main_frame, style="Black.TFrame")
         frame.pack(pady=5)
-        ttk.Label(frame, text=col, width=20, anchor="w", style="Black.TLabel").pack(side=tk.LEFT)
+        ttk.Label(frame, text=col, width=20, anchor="w", style="Black.TLabel",font=("Times New Romman", 20)).pack(side=tk.LEFT)
         combo = ttk.Combobox(frame, values=backend.CATEGORIES, width=20)
         combo.pack(side=tk.LEFT, padx=(0, 10))
         combo.current(0)
         column_mappings[col] = combo
 
-        measure_combo = ttk.Combobox(frame, values=backend.MEASURES, width=10)
+        measure_combo = ttk.Combobox(frame, values=backend.MEASURES, width=15)
         measure_combo.pack(side=tk.LEFT)
         measure_combo.current(0)
         measures[col] = measure_combo

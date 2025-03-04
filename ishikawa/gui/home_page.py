@@ -11,11 +11,11 @@ def show_home_page(main_frame):
     home_frame.pack(expand=True)
 
     # Title label
-    ttk.Label(home_frame, text="Ishikawa Diagram Generator", font=("Arial", 24), style="Black.TLabel").pack(pady=20)
+    ttk.Label(home_frame, text="Ishikawa Diagram Generator", font=("Times New Romman", 30), style="Black.TLabel").pack(pady=10)
 
     # Description label
     description_label = ttk.Label(home_frame, text="This tool helps you create Ishikawa diagrams for root cause analysis.",
-                                 wraplength=500, style="Black.TLabel")
+                                 wraplength=500, style="Black.TLabel", font=("Times New Romman", 20))
     description_label.pack(pady=10)
 
     # Button to start the process

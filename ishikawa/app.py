@@ -8,19 +8,20 @@ import gui.ishikawa_guide as ishikawa_guide
 import gui.upload as upload
 
 def create_gui(root):
+    # Navigation frame
+    nav_frame = ttk.Frame(root, style="Black.TFrame")
+    nav_frame.pack(side= tk.TOP, fill=tk.X, anchor=tk.NW, padx=5)  # Pack at the top and fill horizontally
+
+    # Navigation buttons
+    ttk.Button(nav_frame, text="Home", command=lambda: home_page.show_home_page(main_frame), style="Black.TButton").pack(side=tk.LEFT, anchor= tk.NW,padx=5)
+    ttk.Button(nav_frame, text="Ishikawa Guide", command=lambda: ishikawa_guide.show_guide_page(main_frame), style="Black.TButton").pack(side=tk.LEFT, anchor= tk.NW, padx=5)
+
     """Sets up the main GUI elements and navigation."""
     global main_frame
     main_frame = ttk.Frame(root, style="Black.TFrame")
     main_frame.pack(expand=True, padx=20, pady=20)
 
-    # Navigation frame
-    nav_frame = ttk.Frame(root, style="Black.TFrame")
-    nav_frame.pack(side="top", fill=tk.X, padx=5)  # Pack at the top and fill horizontally
-
-    # Navigation buttons
-    ttk.Button(nav_frame, text="Home", command=lambda: home_page.show_home_page(main_frame), style="Black.TButton").pack(side=tk.LEFT, padx=5)
-    ttk.Button(nav_frame, text="Ishikawa Guide", command=lambda: ishikawa_guide.show_guide_page(main_frame), style="Black.TButton").pack(side=tk.LEFT, padx=5)
-
+    
     # Show the Ishikawa guide initially
     ishikawa_guide.show_guide_page(main_frame)
 

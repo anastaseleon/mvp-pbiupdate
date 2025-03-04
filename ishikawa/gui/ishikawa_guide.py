@@ -26,8 +26,9 @@ def show_guide_page(main_frame):
         {
             "title": "Ishikawa Diagram and the DMAIC Framework",
             "text": """
-            The DMAIC framework (Define, Measure, Analyze, Improve, Control) is a structured problem-solving approach often used in Six Sigma projects.
-           It can be effectively integrated with the Ishikawa diagram to provide a comprehensive approach to problem-solving.
+          The DMAIC framework (Define, Measure, Analyze, Improve, Control) is a structured problem-solving approach often used in
+          Six Sigma projects. It can be effectively integrated with the Ishikawa diagram to provide a comprehensive approach to
+         problem-solving.
 
             How DMAIC complements the Ishikawa diagram:
 
@@ -103,11 +104,11 @@ def show_guide_page(main_frame):
         page_data = guide_pages[page_num]
 
         # Title Label (formatted differently)
-        title_label = ttk.Label(main_frame, text=page_data["title"], justify="center", style="Black.TLabel", font=("Arial", 18, "bold"))
+        title_label = ttk.Label(main_frame, text=page_data["title"], justify="center", style="Black.TLabel", font=("Arial", 30, "bold"))
         title_label.pack(pady=10)
 
         # Text Label
-        text_label = ttk.Label(main_frame, text=page_data["text"], justify="left", style="Black.TLabel",font=("Arial", 15))
+        text_label = ttk.Label(main_frame, text=page_data["text"], justify="left", style="Black.TLabel",font=("Arial", 20))
         text_label.pack(pady=10, fill=tk.X)
 
         # Image Label (if an image is specified)
