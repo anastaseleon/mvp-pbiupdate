@@ -13,7 +13,8 @@ def show_guide_page(main_frame):
         {
             "title": "Ishikawa (Fishbone) Diagram - Introduction",
             "text": """
-            The Ishikawa diagram, also known as the fishbone diagram or cause-and-effect diagram, is a visual tool used to identify and organize the potential causes of a problem.
+            The Ishikawa diagram, also known as the fishbone diagram or cause-and-effect diagram, is a visual tool used to identify and organize
+           the potential causes of a problem.
 
             Key benefits:
 
@@ -27,18 +28,18 @@ def show_guide_page(main_frame):
             "title": "Ishikawa Diagram and the DMAIC Framework",
             "text": """
           The DMAIC framework (Define, Measure, Analyze, Improve, Control) is a structured problem-solving approach often used in
-          Six Sigma projects. It can be effectively integrated with the Ishikawa diagram to provide a comprehensive approach to
-         problem-solving.
+          Six Sigma projects. We suggest integrating it with the Ishikawa diagram to provide a comprehensive approach to
+         root0-cause analysis.
 
-            How DMAIC complements the Ishikawa diagram:
+            How do we suggest complementing the Ishikawa diagram with DMAIC:
 
-            - Define: Clearly define the problem and project scope.
-            - Measure: Collect data and establish metrics to track progress.
-            - Analyze: Use the Ishikawa diagram to brainstorm and analyze potential causes.
+            - Define: Clearly define the problem and potential causes (independant variables).
+            - Measure: Collect data and establish metrics relevant to each variables.
+            - Analyze: Use the Ishikawa diagram and a vizualisation tool to look at those metrics.
             - Improve: Develop and implement solutions to address root causes.
-            - Control: Monitor results, sustain improvements, and standardize processes.
-            """,
-            "image": "imagepage2.png"
+            - Control: Monitor results through the vizualisation tool, sustain improvements, and standardize processes.
+            """
+      
         },
         {
             "title": "Ishikawa (Fishbone) Diagram - Define Phase",
