@@ -8,88 +8,78 @@ def show_guide_page(main_frame):
     for widget in main_frame.winfo_children():
         widget.destroy()
 
-    # Create the guide pages (example with 5 pages)
+    # Create the guide pages
     guide_pages = [
         {
-            "title": "Ishikawa (Fishbone) Diagram - Introduction",
+            "title": "Understanding Root Cause Analysis (RCA)",
             "text": """
-            The Ishikawa diagram, also known as the fishbone diagram or cause-and-effect diagram, is a visual tool used to identify and organize
-           the potential causes of a problem.
+            Root Cause Analysis (RCA) is a systematic approach to identifying the underlying causes of problems or events. 
+            Instead of just addressing the symptoms, RCA delves deeper to understand why the issue occurred and prevent it from happening again.
 
             Key benefits:
 
-            - Provides a visual representation of the problem and its potential causes.
-            - Helps to identify root causes rather than just symptoms.
-            - Facilitates brainstorming and encourages team participation.
-            - Can be used in various settings, from manufacturing to service industries.
+            - Prevents recurring problems.
+            - Improves problem-solving abilities.
+            - Enhances decision-making.
+            - Increases efficiency and productivity.
+            - Reduces costs associated with recurring issues.
+
+            Our Ishikawa tool will help you systematically investigate and document the root causes of problems you encounter, 
+            whether in manufacturing, service delivery, or any other area.
             """
         },
         {
-            "title": "Ishikawa Diagram and the DMAIC Framework",
+            "title": "The Ishikawa Diagram in RCA",
             "text": """
-          The DMAIC framework (Define, Measure, Analyze, Improve, Control) is a structured problem-solving approach often used in
-          Six Sigma projects. We suggest integrating it with the Ishikawa diagram to provide a comprehensive approach to
-         root0-cause analysis.
+            The Ishikawa diagram, also known as the fishbone diagram or cause-and-effect diagram, is a visual tool for brainstorming 
+            and organizing potential causes of a problem.
 
-            How do we suggest complementing the Ishikawa diagram with DMAIC:
+            Benefits of using the Ishikawa diagram:
 
-            - Define: Clearly define the problem and potential causes (independant variables).
-            - Measure: Collect data and establish metrics relevant to each variables.
-            - Analyze: Use the Ishikawa diagram and a vizualisation tool to look at those metrics.
-            - Improve: Develop and implement solutions to address root causes.
-            - Control: Monitor results through the vizualisation tool, sustain improvements, and standardize processes.
-            """
-      
-        },
-        {
-            "title": "Ishikawa (Fishbone) Diagram - Define Phase",
-            "text": """
-            In the Define phase, you clearly articulate the problem you're trying to solve. This involves:
+            - Provides a clear visual representation of cause-and-effect relationships.
+            - Helps identify root causes by exploring different categories of potential causes.
+            - Facilitates team participation and brainstorming.
 
-            - Problem Statement: Create a concise and specific problem statement.
-            - Project Scope: Define the boundaries of your analysis.
-            - Goals: Establish clear and measurable goals for the project.
-            - Team: Identify the team members who will be involved in the analysis and improvement efforts.
+            Our tool provides a digital canvas for creating Ishikawa diagrams, allowing you to easily add, edit, and organize causes and categories.
             """
         },
         {
-            "title": "Ishikawa (Fishbone) Diagram - Measure Phase",
+            "title": "Steps in RCA with the Ishikawa Diagram",
             "text": """
-            The Measure phase focuses on gathering data related to the problem. This includes:
+            Steps involved in using the Ishikawa diagram for RCA:
 
-            - Data Collection: Collect both quantitative and qualitative data.
-            - Metrics: Develop key performance indicators (KPIs) to track progress.
-            - Measurement System Analysis: Ensure the accuracy and reliability of your measurement system.
+            1. **Define the Problem:** Clearly state the problem and its impact.
+            2. **Identify Major Categories:** Determine the main categories of potential causes (e.g., 6Ms, or categories specific to the problem domain).
+            3. **Brainstorm Potential Causes:** For each category, brainstorm possible causes that could contribute to the problem.
+            4. **Analyze and Prioritize:** Discuss and analyze the causes to identify the most likely root causes.
+            5. **Develop Solutions:** Generate potential solutions to address the root causes.
+            6. **Implement and Monitor:** Put the chosen solutions into action and track their effectiveness.
+
+            Our tool guides you through each step of the RCA process, providing prompts and templates to help you define the problem, 
+            categorize causes, and develop solutions.
             """
         },
         {
-            "title": "Ishikawa (Fishbone) Diagram - Analyze Phase",
+            "title": "Steps to do RCA with our tool",
             "text": """
-            In the Analyze phase, you use the Ishikawa diagram to brainstorm and analyze potential causes:
-
-            - Brainstorming: Generate a comprehensive list of potential causes.
-            - Categorization: Group the causes into the 6M categories (or other relevant categories).
-            - Prioritization: Identify the most likely root causes using data analysis and statistical tools.
+            1. **Define the problem:** Clearly articulate the problem you're trying to solve and identify the target variable.
+            2. **Categorize:** Use the tool to categorize potential causes into relevant categories (e.g., the 6Ms).
+            3. **Choose relevant metrics:** Select appropriate metrics to measure the impact of each category and potential cause on the target variable.
+            4. **Monitor using Power BI:** Integrate the tool's output with Power BI to visualize and monitor the relationships between causes and the target variable.
+            5. **Analyze and improve:** Observe how changes in the independent variables affect the target variable, identify root causes, and develop solutions.
             """
         },
         {
-            "title": "Ishikawa (Fishbone) Diagram - Improve Phase",
+            "title": "Tips for Effective RCA with the Ishikawa Diagram",
             "text": """
-            The Improve phase involves developing and implementing solutions to address the root causes:
+            Tips for using the Ishikawa diagram effectively:
 
-            - Solution Generation: Brainstorm potential solutions.
-            - Evaluation: Evaluate the potential solutions based on feasibility and effectiveness.
-            - Implementation: Implement the chosen solutions, starting with pilot tests if possible.
-            """
-        },
-        {
-            "title": "Ishikawa (Fishbone) Diagram - Control Phase",
-            "text": """
-            The Control phase focuses on sustaining the improvements and preventing the problem from recurring:
+            - Involve a cross-functional team to get diverse perspectives.
+            - Use data and evidence to support the analysis.
+            - Don't stop at the first identified cause; keep asking "why" to get to the root cause.
+            - Consider using other RCA tools in conjunction with the Ishikawa diagram (e.g., 5 Whys, Pareto analysis).
 
-            - Monitoring: Track the effectiveness of the solutions using KPIs.
-            - Standardization: Update procedures and documentation to reflect the improved processes.
-            - Control Mechanisms: Implement controls to ensure the improvements are maintained.
+            Our tool allows you to collaborate with team members, attach data and evidence to your diagram, and export your analysis for use in other RCA tools.
             """
         }
     ]
@@ -104,46 +94,24 @@ def show_guide_page(main_frame):
 
         page_data = guide_pages[page_num]
 
-        # Title Label (formatted differently)
+        # Title Label
         title_label = ttk.Label(main_frame, text=page_data["title"], justify="center", style="Black.TLabel", font=("Arial", 30, "bold"))
         title_label.pack(pady=10)
 
         # Text Label
-        text_label = ttk.Label(main_frame, text=page_data["text"], justify="left", style="Black.TLabel",font=("Arial", 20))
+        text_label = ttk.Label(main_frame, text=page_data["text"], justify="left", style="Black.TLabel", font=("Arial", 20))
         text_label.pack(pady=10, fill=tk.X)
-
-        # Image Label (if an image is specified)
-        if page_data.get("image"):
-            try:
-                image = Image.open(page_data["image"])
-                image = image.resize((400, 300), Image.LANCZOS)
-                photo = ImageTk.PhotoImage(image)
-                image_label = ttk.Label(main_frame, image=photo, style="Black.TLabel")
-                image_label.image = photo
-                image_label.pack(pady=5)
-            except FileNotFoundError:
-                print(f"Error: Image file not found: {page_data['image']}")
-                error_label = ttk.Label(main_frame, text=f"Image not found: {page_data['image']}", foreground="red",
-                                       style="Black.TLabel")
-                error_label.pack()
-            except Exception as e:
-                print(f"Error loading image: {e}")
-                error_label = ttk.Label(main_frame, text=f"Error loading image", foreground="red", style="Black.TLabel")
-                error_label.pack()
 
         # Button frame for navigation
         button_frame = ttk.Frame(main_frame, style="Black.TFrame")
-        button_frame.pack(pady=10, fill='x', expand=False, side=tk.BOTTOM)  # Pack at the bottom
+        button_frame.pack(pady=10, fill='x', expand=False, side=tk.BOTTOM)
 
         if page_num > 0:
-            ttk.Button(button_frame, text="Previous", command=lambda: show_guide_page(page_num - 1),
-                       style="Black.TButton").pack(side=tk.LEFT, padx=5)
+            ttk.Button(button_frame, text="Previous", command=lambda: show_guide_page(page_num - 1), style="Black.TButton").pack(side=tk.LEFT, padx=5)
         if page_num < len(guide_pages) - 1:
-            ttk.Button(button_frame, text="Next", command=lambda: show_guide_page(page_num + 1),
-                       style="Black.TButton").pack(side=tk.RIGHT, padx=5)
+            ttk.Button(button_frame, text="Next", command=lambda: show_guide_page(page_num + 1), style="Black.TButton").pack(side=tk.RIGHT, padx=5)
         else:
-            ttk.Button(button_frame, text="Home", command=lambda: home_page.show_home_page(main_frame),
-                       style="Black.TButton").pack(side=tk.RIGHT, padx=5)
+            ttk.Button(button_frame, text="Home", command=lambda: home_page.show_home_page(main_frame), style="Black.TButton").pack(side=tk.RIGHT, padx=5)
 
     # Show the first guide page initially
     show_guide_page(0)
