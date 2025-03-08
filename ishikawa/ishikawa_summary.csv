@@ -1,6 +1,6 @@
 Column,Ishikawa,Value,Measure,Correlation to target
-Date,Ignore,1000.0,count,
-Shift,Environment,1000.0,count,
+Date,Materials,1000.0,count,
+Shift,Materials,1000.0,count,
 Operator,Materials,1000.0,count,
 Machine,Materials,1000.0,count,
 RawMaterialBatch,Materials,1000.0,count,

@@ -5,7 +5,7 @@ a = Analysis(
     ['app.py'],
     pathex=[],
     binaries=[],
-    datas=[('template.pbit', '.')],
+    datas=[('template.pbit', '.'), ('gui', 'gui')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},

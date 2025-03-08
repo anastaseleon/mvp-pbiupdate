@@ -1,5 +1,6 @@
+﻿# -*- coding: utf-8 -*-
 from tkinter import ttk
-from. import categorization_page
+from . import categorization_page
 import styles  # Import the styles module
 
 def show_home_page(main_frame):
@@ -11,14 +12,14 @@ def show_home_page(main_frame):
     home_frame.pack(expand=True)
 
     # Title label
-    ttk.Label(home_frame, text="Ishikawa Diagram Generator", font=("Times New Romman", 30), style="Black.TLabel").pack(pady=10)
+    ttk.Label(home_frame, text="Générateur de Diagramme d'Ishikawa", font=("Times New Roman", 30), style="Black.TLabel").pack(pady=10)
 
     # Description label
-    description_label = ttk.Label(home_frame, text="This tool helps you create Ishikawa diagrams for root cause analysis.",
-                                 wraplength=500, style="Black.TLabel", font=("Times New Romman", 20))
+    description_label = ttk.Label(home_frame, text="Cet outil vous aide à créer des diagrammes d'Ishikawa pour l'analyse des causes profondes.",
+                                    wraplength=500, style="Black.TLabel", font=("Times New Roman", 20))
     description_label.pack(pady=10)
 
     # Button to start the process
-    start_button = ttk.Button(home_frame, text="Start Analysis",
-                             command=lambda: categorization_page.show_categorization_page(main_frame), style="Black.TButton")
+    start_button = ttk.Button(home_frame, text="Démarrer l'Analyse",
+                                command=lambda: categorization_page.show_categorization_page(main_frame), style="Black.TButton")
     start_button.pack(pady=20)

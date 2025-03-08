@@ -1,3 +1,4 @@
+﻿# -*- coding: utf-8 -*-
 import tkinter as tk
 from tkinter import ttk
 from PIL import Image, ImageTk
@@ -11,76 +12,76 @@ def show_guide_page(main_frame):
     # Create the guide pages
     guide_pages = [
         {
-            "title": "Understanding Root Cause Analysis (RCA)",
+            "title": "Comprendre l'analyse des causes profondes (RCA)",
             "text": """
-            Root Cause Analysis (RCA) is a systematic approach to identifying the underlying causes of problems or events. 
-            Instead of just addressing the symptoms, RCA delves deeper to understand why the issue occurred and prevent it from happening again.
+                L'analyse des causes profondes (RCA) est une approche systématique pour identifier les causes sous-jacentes des problèmes ou des événements.
+                Au lieu de simplement traiter les symptômes, l'RCA approfondit pour comprendre pourquoi le problème est survenu et l'empêcher de se reproduire.
 
-            Key benefits:
+                Principaux avantages :
 
-            - Prevents recurring problems.
-            - Improves problem-solving abilities.
-            - Enhances decision-making.
-            - Increases efficiency and productivity.
-            - Reduces costs associated with recurring issues.
+                - Empêche les problèmes récurrents.
+                - Améliore les capacités de résolution de problèmes.
+                - Améliore la prise de décision.
+                - Augmente l'efficacité et la productivité.
+                - Réduit les coûts associés aux problèmes récurrents.
 
-            Our Ishikawa tool will help you systematically investigate and document the root causes of problems you encounter, 
-            whether in manufacturing, service delivery, or any other area.
-            """
+                Notre outil Ishikawa vous aidera  à categoriser et quantifier les causes profondes des problèmes que vous rencontrez,
+                que ce soit dans la fabrication, la prestation de services ou tout autre domaine.
+                """
         },
         {
-            "title": "The Ishikawa Diagram in RCA",
+            "title": "Le diagramme d'Ishikawa dans l'RCA",
             "text": """
-            The Ishikawa diagram, also known as the fishbone diagram or cause-and-effect diagram, is a visual tool for brainstorming 
-            and organizing potential causes of a problem.
+                Le diagramme d'Ishikawa, également connu sous le nom de diagramme en arêtes de poisson ou diagramme de cause à effet, est un outil visuel pour le brainstorming
+                et l'organisation des causes potentielles d'un problème.
 
-            Benefits of using the Ishikawa diagram:
+                Avantages de l'utilisation du diagramme d'Ishikawa :
 
-            - Provides a clear visual representation of cause-and-effect relationships.
-            - Helps identify root causes by exploring different categories of potential causes.
-            - Facilitates team participation and brainstorming.
+                - Fournit une représentation visuelle claire des relations de cause à effet.
+                - Aide à identifier les causes profondes en explorant différentes catégories de causes potentielles.
+                - Facilite la participation et le brainstorming de l'équipe.
 
-            Our tool provides a digital canvas for creating Ishikawa diagrams, allowing you to easily add, edit, and organize causes and categories.
-            """
+                Notre outil fournit un template Power BI pour la representation du diagrammes d'Ishikawa, vous permettant de suivre facilement les causes et les catégories.
+                """
         },
         {
-            "title": "Steps in RCA with the Ishikawa Diagram",
+            "title": "Étapes de l'RCA avec le diagramme d'Ishikawa",
             "text": """
-            Steps involved in using the Ishikawa diagram for RCA:
+                Étapes impliquées dans l'utilisation du diagramme d'Ishikawa pour l'RCA :
 
-            1. **Define the Problem:** Clearly state the problem and its impact.
-            2. **Identify Major Categories:** Determine the main categories of potential causes (e.g., 6Ms, or categories specific to the problem domain).
-            3. **Brainstorm Potential Causes:** For each category, brainstorm possible causes that could contribute to the problem.
-            4. **Analyze and Prioritize:** Discuss and analyze the causes to identify the most likely root causes.
-            5. **Develop Solutions:** Generate potential solutions to address the root causes.
-            6. **Implement and Monitor:** Put the chosen solutions into action and track their effectiveness.
+                1. Définir le problème : Énoncez clairement le problème et son impact.
+                2. Identifier les catégories principales : Déterminez les principales catégories de causes potentielles (par exemple, les 6M ou les catégories spécifiques au domaine du problème).
+                3. Brainstorming des causes potentielles : Pour chaque catégorie, réfléchissez aux causes possibles qui pourraient contribuer au problème.
+                4. Analyser et hiérRCAhiser : Discutez et analysez les causes pour identifier les causes profondes les plus probables.
+                5. Élaborer des solutions : Générez des solutions potentielles pour traiter les causes profondes.
+                6. Mettre en œuvre et surveiller : Mettez en œuvre les solutions choisies et suivez leur efficacité.
 
-            Our tool guides you through each step of the RCA process, providing prompts and templates to help you define the problem, 
-            categorize causes, and develop solutions.
-            """
+                Notre outil vous guide à travers chaque étape du processus RCA, en fournissant des invites et des modèles pour vous aider à définir le problème,
+                catégoriser les causes et élaborer des solutions.
+                """
         },
         {
-            "title": "Steps to do RCA with our tool",
+            "title": "Étapes pour faire l'RCA avec notre outil",
             "text": """
-            1. **Define the problem:** Clearly articulate the problem you're trying to solve and identify the target variable.
-            2. **Categorize:** Use the tool to categorize potential causes into relevant categories (e.g., the 6Ms).
-            3. **Choose relevant metrics:** Select appropriate metrics to measure the impact of each category and potential cause on the target variable.
-            4. **Monitor using Power BI:** Integrate the tool's output with Power BI to visualize and monitor the relationships between causes and the target variable.
-            5. **Analyze and improve:** Observe how changes in the independent variables affect the target variable, identify root causes, and develop solutions.
-            """
+                1. Définir le problème : Articulez clairement le problème que vous essayez de résoudre et identifiez la variable cible.
+                2. Catégoriser : Utilisez l'outil pour classer les causes potentielles dans les catégories pertinentes (par exemple, les 6M).
+                3. Choisir des mesures pertinentes : Sélectionnez les mesures appropriées pour évaluer l'impact de chaque catégorie et cause potentielle sur la variable cible.
+                4. Surveiller avec Power BI : Intégrez la sortie de l'outil avec Power BI pour visualiser et surveiller les relations entre les causes et la variable cible.
+                5. Analyser et améliorer : Observez comment les changements dans les variables indépendantes affectent la variable cible, identifiez les causes profondes et élaborez des solutions.
+                """
         },
         {
-            "title": "Tips for Effective RCA with the Ishikawa Diagram",
+            "title": "Conseils pour une RCA efficace avec le diagramme d'Ishikawa",
             "text": """
-            Tips for using the Ishikawa diagram effectively:
+                Conseils pour utiliser efficacement le diagramme d'Ishikawa :
 
-            - Involve a cross-functional team to get diverse perspectives.
-            - Use data and evidence to support the analysis.
-            - Don't stop at the first identified cause; keep asking "why" to get to the root cause.
-            - Consider using other RCA tools in conjunction with the Ishikawa diagram (e.g., 5 Whys, Pareto analysis).
+                - Impliquer une équipe interfonctionnelle pour obtenir des perspectives diverses.
+                - Utiliser des données et des preuves pour étayer l'analyse.
+                - Ne vous arrêtez pas à la première cause identifiée ; continuez à demander « pourquoi » pour arriver à la cause profonde.
+                - Envisager d'utiliser d'autres outils RCA en conjonction avec le diagramme d'Ishikawa (par exemple, les 5 pourquoi, l'analyse de Pareto).
 
-            Our tool allows you to collaborate with team members, attach data and evidence to your diagram, and export your analysis for use in other RCA tools.
-            """
+                Notre outil vous permet de collaborer avec les membres de l'équipe, de joindre des données et des preuves à votre diagramme et d'exporter votre analyse pour l'utiliser dans d'autres outils RCA.
+                """
         }
     ]
 
@@ -107,11 +108,11 @@ def show_guide_page(main_frame):
         button_frame.pack(pady=10, fill='x', expand=False, side=tk.BOTTOM)
 
         if page_num > 0:
-            ttk.Button(button_frame, text="Previous", command=lambda: show_guide_page(page_num - 1), style="Black.TButton").pack(side=tk.LEFT, padx=5)
+            ttk.Button(button_frame, text="Précédent", command=lambda: show_guide_page(page_num - 1), style="Black.TButton").pack(side=tk.LEFT, padx=5)
         if page_num < len(guide_pages) - 1:
-            ttk.Button(button_frame, text="Next", command=lambda: show_guide_page(page_num + 1), style="Black.TButton").pack(side=tk.RIGHT, padx=5)
+            ttk.Button(button_frame, text="Suivant", command=lambda: show_guide_page(page_num + 1), style="Black.TButton").pack(side=tk.RIGHT, padx=5)
         else:
-            ttk.Button(button_frame, text="Home", command=lambda: home_page.show_home_page(main_frame), style="Black.TButton").pack(side=tk.RIGHT, padx=5)
+            ttk.Button(button_frame, text="Accueil", command=lambda: home_page.show_home_page(main_frame), style="Black.TButton").pack(side=tk.RIGHT, padx=5)
 
     # Show the first guide page initially
     show_guide_page(0)

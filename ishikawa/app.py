@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import tkinter as tk
 from tkinter import ttk
 import styles
@@ -13,8 +14,8 @@ def create_gui(root):
     nav_frame.pack(side= tk.TOP, fill=tk.X, anchor=tk.NW, padx=5)  # Pack at the top and fill horizontally
 
     # Navigation buttons
-    ttk.Button(nav_frame, text="Home", command=lambda: home_page.show_home_page(main_frame), style="Black.TButton").pack(side=tk.LEFT, anchor= tk.NW,padx=5)
-    ttk.Button(nav_frame, text="Ishikawa Guide", command=lambda: ishikawa_guide.show_guide_page(main_frame), style="Black.TButton").pack(side=tk.LEFT, anchor= tk.NW, padx=5)
+    ttk.Button(nav_frame, text="Accueil", command=lambda: home_page.show_home_page(main_frame), style="Black.TButton").pack(side=tk.LEFT, anchor= tk.NW,padx=5)
+    ttk.Button(nav_frame, text="Guide Ishikawa", command=lambda: ishikawa_guide.show_guide_page(main_frame), style="Black.TButton").pack(side=tk.LEFT, anchor= tk.NW, padx=5)
 
     """Sets up the main GUI elements and navigation."""
     global main_frame
@@ -27,7 +28,7 @@ def create_gui(root):
 
 if __name__ == "__main__":
     root = tk.Tk()
-    root.title("Ishikawa Analyzer")
+    root.title("Analyse Ishikawa")
     root.geometry("1800x1200")
     root.configure(bg="#1e1e1e")
     styles.configure_styles()

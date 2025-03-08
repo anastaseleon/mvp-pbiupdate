@@ -1,6 +1,7 @@
 import os
 import pandas as pd
 import subprocess
+import scipy.stats as stats
 
 # Constants
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -25,18 +26,25 @@ def process_data(file_path, mappings, target_column, measures):
     try:
         df = pd.read_csv(file_path)
 
-
         summaries =[]
         for col, measure in measures.items():
             if col!= target_column and measure in MEASURES:
                 value = df[col].agg([measure]).to_dict()[measure]
                 ishikawa_category = mappings.get(col, "Unknown")
 
-                # Calculate correlation with target column (if numeric)
-                if pd.api.types.is_numeric_dtype(df[col]):
-                    correlation = df[col].corr(df[target_column])
+                # Check if the column is categorical
+                if df[col].dtype == 'object':
+                    # Calculate Cramér's V for categorical columns
+                    confusion_matrix = pd.crosstab(df[target_column], df[col])
+                    chi2 = stats.chi2_contingency(confusion_matrix)[0]
+                    n = confusion_matrix.sum().sum()
+                    phi2 = chi2/n
+                    min_dim = min(confusion_matrix.shape)-1
+                    cramers_v =  np.sqrt(phi2/min_dim)
+                    association = cramers_v
                 else:
-                    correlation = None
+                    # Calculate correlation with target column for numerical columns
+                    association = df[col].corr(df[target_column])
 
                 # Add the selected measure and correlation to the summary
                 summaries.append({
@@ -44,7 +52,7 @@ def process_data(file_path, mappings, target_column, measures):
                     "Ishikawa": ishikawa_category,
                     "Value": value,
                     "Measure": measure,
-                    "Correlation to target": correlation  # Add correlation as a separate column
+                    "Association to target": association  # Add association as a separate column
                 })
 
         # Add the target column summary
@@ -54,7 +62,7 @@ def process_data(file_path, mappings, target_column, measures):
             "Ishikawa": "Target",
             "Value": target_summary["mean"],
             "Measure": "mean",
-            "Correlation to target": 1.0  # Correlation with itself is 1
+            "Association to target": 1.0  # Correlation with itself is 1
         })
 
         summary_df = pd.DataFrame(summaries)
